@@ -1,0 +1,82 @@
+﻿<Page
+    x:Class="ReactionTimeTest.Shared.RoundPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:ReactionTimeTest.Shared"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid Tapped="Grid_Tapped">
+        <Grid
+            x:Name="WaitGrid"
+            Background="Orange"
+            Visibility="Collapsed">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Style="{ThemeResource HeaderTextBlockStyle}"
+                Text="Wait!" />
+        </Grid>
+        <Grid
+            x:Name="TooEarlyGrid"
+            Background="Red"
+            Visibility="Collapsed">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Style="{ThemeResource HeaderTextBlockStyle}"
+                    Text="Too early..." />
+                <TextBlock HorizontalAlignment="Center" Text="Try again" />
+            </StackPanel>
+        </Grid>
+        <Grid
+            x:Name="TapGrid"
+            Background="Green"
+            Visibility="Collapsed">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Style="{ThemeResource HeaderTextBlockStyle}"
+                Text="Tap now!" />
+        </Grid>
+        <Grid
+            x:Name="ResultsGrid"
+            Background="SteelBlue"
+            Visibility="Visible">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="120" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Style="{ThemeResource HeaderTextBlockStyle}">
+                    <Run x:Name="RoundTimeRun" Text="123" />
+                    <Run Text="ms" />
+                </TextBlock>
+                <TextBlock Grid.Row="1">
+                    <Run Text="Avg:" />
+                    <Run x:Name="AverageTimeRun" />
+                    <Run Text="ms" />
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalAlignment="Right">
+                    <Run Text="Round:" />
+                    <Run x:Name="RoundNumberRun" />
+                    <Run Text="of 5" />
+                </TextBlock>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

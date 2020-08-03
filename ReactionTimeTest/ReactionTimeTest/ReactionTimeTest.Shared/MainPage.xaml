@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="ReactionTimeTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:ReactionTimeTest"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Gray" Tapped="Grid_Tapped">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock
+                Style="{ThemeResource HeaderTextBlockStyle}"
+                Text="Welcome to Reaction Time Test"
+                TextAlignment="Center" />
+            <TextBlock HorizontalAlignment="Center" Text="Tap to get started" />
+        </StackPanel>
+    </Grid>
+</Page>
